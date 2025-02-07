@@ -1,0 +1,28 @@
+FROM node:alpine
+WORKDIR ./clarity-api
+# or put everyting into a /cline
+COPY package.json .
+RUN npm i
+COPY . .
+# EXPOSE 4500
+CMD ["npm", "run", "dev"]
+
+
+# docker exec -i -t [container name] bash|sh
+# https://circleci.com/blog/ssh-into-docker-container/
+#  docker run -dp  4500:4500 beliefappclient
+# docker run -dp  4500:4500 hobiorah/beliefappapi
+
+
+#  apk add curl for alpine installing cmd tools
+
+# docker build -f Dockerfile.dev -t hobiorah/clarity-api .
+#  docker run -dp  4500:4500 hobiorah/clarity-api #latest
+
+
+# installing docker on amazon linux ami - https://www.cyberciti.biz/faq/how-to-install-docker-on-amazon-linux-2/
+
+# using docker compse up - https://docs.docker.com/compose/compose-application-model/
+
+
+sudo docker exec -i -t 22cb13c7a00f sh
